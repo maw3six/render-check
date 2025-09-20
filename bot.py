@@ -3,11 +3,11 @@ import requests
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-# Ambil token dari environment variable (Render)
+# Ambil token dari environment variable Railway
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 if not BOT_TOKEN:
-    raise ValueError("⚠️  Silakan set TELEGRAM_BOT_TOKEN di environment variables Render.")
+    raise ValueError("⚠️  Silakan set TELEGRAM_BOT_TOKEN di Railway environment variables.")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("🤖 Halo! Kirimkan nama domain untuk dicek statusnya.\nContoh: google.com")
